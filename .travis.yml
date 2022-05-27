@@ -1,7 +1,29 @@
+###################
+# TravisCI config #
+###################
+os: linux
+dist: bionic
+language: php
+php: 7.3
+
+
+##############
+# Git config #
+##############
+git:
+  depth: false
+  submodules: false
+  quiet: true
+
+
 jobs:
   include:
     - stage: test
+      install:
+        - npm install || exit 1
+
       script: echo 'test'
+
     - stage: deploy
       script: echo 'deploy'
 
