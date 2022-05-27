@@ -4,3 +4,8 @@ jobs:
       script: echo 'test'
     - stage: deploy
       script: echo 'deploy'
+
+stages:
+  - name: test
+  - name: deploy
+    if: branch = main
