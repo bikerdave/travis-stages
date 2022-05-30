@@ -1,0 +1,13 @@
+{
+    "require": {
+        "monolog/monolog": "^2.6"
+    },
+    "require-dev": {
+        "composer/installers": "^2.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}

@@ -20,14 +20,26 @@ jobs:
   include:
     - stage: test
       install:
-        - npm install || exit 1
+        - composer install || exit 1
 
-      script: echo 'test'
+      script:
+        - echo 'test'
+
+    - stage: build
+      install:
+        - composer install --no-dev || exit 1
+
+      script:
+        - echo 'build'
+
 
     - stage: deploy
-      script: echo 'deploy'
+      script:
+        - echo 'deploy'
+
 
 stages:
   - name: test
+  - name: build
   - name: deploy
     if: branch = main
